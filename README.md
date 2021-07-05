@@ -98,3 +98,16 @@ def login():
 </form>
     """
 ```
+- To redirect:
+```python
+@app.route("/welcome/") 
+def welcome():
+    return render_template("welcome.html")
+
+@app.route("/login/")
+def login():
+    return redirect(url_for("welcome"))  # Redirect the users if they visit login page
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+## Bootstrap
